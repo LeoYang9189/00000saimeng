@@ -74,6 +74,7 @@ const menuTree: OperatorMenuNode[] = [
     children: [
       { key: '/admin/settings/profile', label: '个人中心' },
       { key: '/admin/settings/categories', label: '分类管理' },
+      { key: '/admin/settings/knowledge', label: '知识库管理' },
       { key: '/admin/settings/site', label: '网站管理' },
       { key: '/admin/settings/content', label: '内容管理' },
       { key: '/admin/settings/logs', label: '系统日志' },

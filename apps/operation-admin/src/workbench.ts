@@ -22,13 +22,32 @@ export interface MaterialResult {
   }
 }
 export interface AiTurn { role: 'user' | 'assistant'; content: string }
+export interface KnowledgeSource { id: string; fileName: string; kind: 'MANUAL' | 'MEMORY'; sourceUrl: string }
+export interface KnowledgeDocument extends KnowledgeSource { keywords: string; content: string; uploader: string; createdAt: string }
+export interface SelectionResult {
+  category: string; benchmark: string; summary: string; notice: string; sources: KnowledgeSource[]
+  rows: { brand: string; productName: string; marketPrice: string; distributor: string; reason: string; risk: string }[]
+}
+export interface AnalysisResult {
+  productId: string; productName: string; mainImage: string; simulated: boolean; notice: string
+  competitorNames: string[]
+  metrics: {
+    months: { month: string; units: number; price: number }[]
+    distributors: { name: string; units: number }[]
+    dimensions: string[]; competitorScores: number[][]
+  }
+  report: null | {
+    summary: string; salesAnalysis: string; distributorAnalysis: string; priceAnalysis: string
+    detailAnalysis: string; competitorAnalysis: string; strategies: string[]
+  }
+}
 export const WORKBENCH_SKILLS = [
   { key: 'materials', title: 'AI 素材优化', description: '商品变成推广内容', placeholder: '例如：突出原产地与口感，画面不放价格，文案自然一些。' },
   { key: 'copy', title: '商品文案', description: '写清卖点，打动顾客', placeholder: '发来商品名称和真实卖点，再告诉我文案准备发在哪里。' },
-  { key: 'selection', title: '智能选品', description: '找到适合渠道的商品', placeholder: '例如：面向社区团购，预算每件 100 元以内。请根据我提供的商品清单给出建议。' },
-  { key: 'analysis', title: '商品分析', description: '梳理优势与机会', placeholder: '提供商品资料、售价和目标客群，我会梳理优势、信息缺口与推广方向。' },
+  { key: 'selection', title: '智能选品', description: '按品类与品牌对标选品', placeholder: '补充渠道、预算或目标客群，例如：餐饮渠道，优先玻璃瓶，小批量试销。' },
+  { key: 'analysis', title: '商品分析', description: '模拟经营图表与运营建议', placeholder: '选填：重点分析价格、分销渠道或详情页改善方向。经营数据为模拟演示。' },
   { key: 'followup', title: '客户跟进', description: '准备下一句沟通', placeholder: '例如：客户看过红酒报价后还没回复，帮我写一段自然、不催促的跟进话术。' },
-  { key: 'knowledge', title: '业务问答', description: '把复杂问题讲清楚', placeholder: '粘贴商品资料或业务说明，再告诉我你想了解什么。' },
+  { key: 'knowledge', title: '业务问答', description: '先查知识库，再组织答案', placeholder: '例如：魔嘞可乐来自哪里？乐可嗨有哪些口味？圣碧涛的品牌背景是什么？' },
 ] as const
 export type WorkbenchSkillKey = typeof WORKBENCH_SKILLS[number]['key']
 export function materialCopyText(result: MaterialResult) {

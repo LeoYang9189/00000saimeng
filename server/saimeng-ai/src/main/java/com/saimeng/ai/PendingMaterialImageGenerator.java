@@ -1,9 +1,6 @@
 package com.saimeng.ai;
 
 import java.util.List;
-import org.springframework.stereotype.Component;
-
-@Component
 public class PendingMaterialImageGenerator implements MaterialImageGenerator {
     @Override
     public boolean isReady() { return false; }

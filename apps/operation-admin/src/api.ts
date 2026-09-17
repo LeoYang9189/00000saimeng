@@ -27,9 +27,78 @@ import type {
   UserUpsertPayload,
 } from './types'
 import { getStoredOperatorSession } from './session'
-import type { AiCapabilities, AiTurn, MaterialRequest, MaterialResult } from './workbench'
+import type { AiCapabilities, AiTurn, MaterialRequest, MaterialResult, AnalysisResult, SelectionResult, KnowledgeSource, KnowledgeDocument } from './workbench'
 
 const API_BASE_URL = 'http://localhost:8080'
+
+export type AiStreamEvent =
+  | { event: 'stage' | 'prompt_delta' | 'text_delta'; data: string }
+  | { event: 'material'; data: MaterialResult }
+  | { event: 'selection'; data: SelectionResult }
+  | { event: 'analysis'; data: AnalysisResult }
+  | { event: 'sources'; data: KnowledgeSource[] }
+  | { event: 'done'; data: boolean }
+  | { event: 'error'; data: { message: string } }
+
+export async function streamAi(
+  kind: 'materials' | 'chat' | 'selection' | 'analysis',
+  payload: MaterialRequest | { skill: string; message: string; history: AiTurn[] }
+    | { category: string; benchmark: string; notes: string } | { productId: string; notes: string },
+  signal: AbortSignal,
+  onEvent: (event: AiStreamEvent) => void,
+) {
+  const session = getStoredOperatorSession()
+  const response = await fetch(`${API_BASE_URL}/api/admin/ai/workbench/${kind}/stream`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'text/event-stream', Authorization: `Bearer ${session?.token ?? ''}` },
+    body: JSON.stringify(payload),
+    signal: AbortSignal.any([signal, AbortSignal.timeout(900000)]),
+  })
+  if (!response.ok) {
+    const error = await response.json().catch(() => null)
+    throw new Error(error?.message || `请求失败（${response.status}），请检查登录状态。`)
+  }
+  if (!response.body || !response.headers.get('content-type')?.includes('text/event-stream'))
+    throw new Error('服务未返回对话流，请重新登录后重试。')
+  const reader = response.body.getReader()
+  const decoder = new TextDecoder()
+  let buffer = ''
+  let completed = false
+  try {
+    while (true) {
+      const { value, done } = await reader.read()
+      buffer += decoder.decode(value, { stream: !done })
+      buffer = buffer.replace(/\r\n/g, '\n')
+      let boundary: number
+      while ((boundary = buffer.indexOf('\n\n')) >= 0) {
+        const block = buffer.slice(0, boundary)
+        buffer = buffer.slice(boundary + 2)
+        const lines = block.split('\n')
+        const event = lines.find(line => line.startsWith('event:'))?.slice(6).trim()
+        const data = lines.filter(line => line.startsWith('data:')).map(line => line.slice(5).trimStart()).join('\n')
+        if (!event || !data) continue
+        const item = { event, data: JSON.parse(data) } as AiStreamEvent
+        if (item.event === 'error') throw new Error(item.data.message)
+        if (item.event === 'done') completed = true
+        onEvent(item)
+      }
+      if (done) break
+    }
+    if (!completed) throw new Error('连接已中断，已生成内容已保留。')
+  } finally {
+    await reader.cancel().catch(() => undefined)
+    reader.releaseLock()
+  }
+}
+
+export function listKnowledge(kind: string, keyword = '', uploader = '') {
+  return request<KnowledgeDocument[]>(`/api/admin/knowledge?${new URLSearchParams({ kind, keyword, uploader })}`)
+}
+export function getKnowledge(id: string) { return request<KnowledgeDocument>(`/api/admin/knowledge/${encodeURIComponent(id)}`) }
+export function deleteKnowledge(id: string) { return request<void>(`/api/admin/knowledge/${encodeURIComponent(id)}`, { method: 'DELETE' }) }
+export function createKnowledge(payload: Pick<KnowledgeDocument, 'kind' | 'fileName' | 'keywords' | 'content' | 'sourceUrl'>) {
+  return request<KnowledgeDocument>('/api/admin/knowledge', { method: 'POST', body: JSON.stringify(payload) })
+}
 
 export async function getAiWorkbench() {
   return request<AiCapabilities>('/api/admin/ai/workbench')

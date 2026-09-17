@@ -116,6 +116,18 @@
 .shelly-empty { padding: 36px 0; text-align: center; font-size: 13px; }
 .shelly-empty p { font-size: 12px; color: #7b879b; }
 .shelly-conversation { display: grid; gap: 26px; padding: 4px 0 28px; }
+.shelly-exchange { display: grid; gap: 20px; min-width: 0; }
+.shelly-bubble-avatar { width: 30px; height: 36px; object-fit: contain; }
+.shelly-user-bubble { white-space: pre-wrap; overflow-wrap: anywhere; }
+.shelly-exchange .ant-bubble-body { min-width: 0; max-width: 100%; }
+.shelly-exchange .ant-bubble-content { line-height: 1.9; }
+.shelly-exchange .ant-bubble-footer { width: 100%; flex-direction: column; align-items: stretch; gap: 12px; }
+.shelly-exchange .ant-bubble-footer > .shelly-text-button { align-self: flex-start; }
+.shelly-conversation-actions { display: flex; justify-content: center; padding: 12px; }
+.shelly-x-sender { border: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+.shelly-x-sender .ant-sender-content { padding: 14px 24px; }
+.shelly-thinking { align-items: center; flex-wrap: wrap; }
+.shelly-thinking > button { margin-left: auto; }
 .shelly-user-message { width: fit-content; max-width: 84%; margin: 0 0 20px auto; padding: 13px 17px; background: #eaf0fb; border-radius: 7px 7px 0 7px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
 .shelly-assistant-heading { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
 .shelly-assistant-heading img { width: 27px; height: 31px; object-fit: contain; }

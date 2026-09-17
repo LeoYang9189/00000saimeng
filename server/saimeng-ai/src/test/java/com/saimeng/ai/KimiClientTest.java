@@ -65,4 +65,33 @@ class KimiClientTest {
         response = "not json";
         assertThatThrownBy(() -> client("test-key").complete("system", "product", null)).isInstanceOf(BusinessException.class);
     }
+
+    @Test void streamsOnlyVisibleContentAndRequiresACompleteFinish() {
+        response = """
+                data: {"choices":[{"delta":{"reasoning_content":"private reasoning"}}]}
+
+                data: {"choices":[{"delta":{"content":"你好"}}]}
+
+                data: {"choices":[{"delta":{"content":"，运营团队。"}}]}
+
+                data: {"choices":[{"delta":{},"finish_reason":"stop"}]}
+
+                data: [DONE]
+
+                """;
+        var deltas = new java.util.ArrayList<String>();
+        assertThat(client("test-key").stream("system", "question", deltas::add)).isEqualTo("你好，运营团队。");
+        assertThat(deltas).containsExactly("你好", "，运营团队。");
+        assertThat(request.get().path("stream").asBoolean()).isTrue();
+        response = "data: {\"choices\":[{\"delta\":{\"content\":\"partial\"}}]}\n\n";
+        assertThatThrownBy(() -> client("test-key").stream("system", "question", delta -> {}))
+                .hasMessageContaining("中断");
+    }
+
+    @Test void streamErrorsNeverExposeSecrets() {
+        status = 401;
+        response = "private-upstream-secret";
+        assertThatThrownBy(() -> client("test-key").stream("system", "question", delta -> {}))
+                .hasMessageContaining("授权失败").hasMessageNotContaining("private").hasMessageNotContaining("test-key");
+    }
 }

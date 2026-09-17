@@ -1,0 +1,34 @@
+[
+  {
+    "id": "seed-molecola-v1",
+    "kind": "MANUAL",
+    "fileName": "魔嘞 MOLECOLA 品牌背景.md",
+    "keywords": "魔嘞,魔嘞可乐,molecola,可乐,意大利",
+    "sourceUrl": "https://molecolaitalia.it/la-storia/",
+    "content": "检索日期：2026-09-17。\n【官网资料】MOLECOLA 官网历史页介绍：构想于2012年在意大利都灵形成，品牌项目于2013年初诞生；2017年推出名为90.60.90的玻璃瓶，设计与意大利电影及服装文化有关。官网产品系列包括经典款、无糖款、无咖啡因款和有机款，具体进口SKU以中文标签为准。\n【中文名称线索】1688商品页将魔嘞与MOLECOLA对应，展示330ml瓶装可乐；这是商家页面，不是品牌授权证明。\n【渠道及价格】未核实中国当前总代理、独家经销权或统一市场零售价。不要将普通批发商写成总代理。采购前索取授权链、报关单、中文标签与当期报价。\n【参考来源】https://molecolaitalia.it/la-storia/\nhttps://molecolaitalia.it/?lang=en\nhttps://m.1688.com/offer/1069718959155.html\n【使用边界】品牌宣传不能转化为销量、健康功效或中国市场领先地位的事实。"
+  },
+  {
+    "id": "seed-lecohi-v1",
+    "kind": "MANUAL",
+    "fileName": "乐可嗨 LECOHI 豆奶资料与核实清单.md",
+    "keywords": "乐可嗨,lecohi,豆奶,豆乳,泰国",
+    "sourceUrl": "https://pcdetail.taobao.com/d25QeXBqWVM3TlcvWUNoMG5MRGlMZz09.html",
+    "content": "检索日期：2026-09-17。资料可信级别：商家商品页，尚无独立官网背景核验。\n【已检索到的页面】淘宝赛盟食品专营店商品页标识品牌LECOHI/乐可嗨，产地泰国，核心植物成分大豆；列出椰子、玉米、可可、黑芝麻、台湾奶茶等口味。页面列出的部分口味为180ml，奶茶口味为230ml，盒装。\n【企业线索】页面的“厂名”字段显示杭州赛盟进出口有限公司，但与页面“泰国产地”信息存在角色歧义，不能据此断言它是实际生产工厂、品牌所有者或中国总代理。需核对进口中文标签、泰国生产商、商标及授权文件。\n【未核实】品牌创立年份、泰国制造商、当前总代理、各SKU配料及过敏原、营养成分、统一市场价均待核实。不使用商品标题里的健康或高蛋白宣传作已证实结论。\n【参考来源】https://pcdetail.taobao.com/d25QeXBqWVM3TlcvWUNoMG5MRGlMZz09.html\n【运营建议】可围绕口味选择、早餐场景和植物饮品类别准备资料；是否含乳、是否适合特定过敏人群必须按具体SKU实物标签说明。"
+  },
+  {
+    "id": "seed-sanbenedetto-v1",
+    "kind": "MANUAL",
+    "fileName": "圣碧涛 San Benedetto 气泡水品牌背景.md",
+    "keywords": "圣碧涛,san benedetto,sanbenedetto,气泡水,矿泉水,水饮",
+    "sourceUrl": "https://www.sanbenedetto.it/it/azienda/chi-siamo",
+    "content": "检索日期：2026-09-17。\n【官网背景】Acqua Minerale San Benedetto S.p.A.于1956年4月10日在意大利威尼斯附近Scorze成立，同年生产首批玻璃瓶装水。官网历史页记载2006年Zoppas家族持有集团控股公司全部股权。\n【品类】品牌涉及矿泉水与非酒精饮料。中国市场可见圣碧涛含气及无气饮用水SKU；气泡类型、规格、水源和矿物质含量须逐一核对标签，不同产品不能共用未经核实的参数。\n【参考来源】品牌官网：https://www.sanbenedetto.it/it/azienda/chi-siamo\n中国商品线索：https://www.jd.com/hprm/132016a1d47e5d83f251.html\n中文品牌名称对应：https://m.maigoo.com/brand/127100.html\n【采购边界】未核实中国当前总代理或独家进口授权；零售平台自营、批发店铺、进口商不等于总代理。市场价随规格和渠道变化，必须提供带日期的具体SKU报价。\n【运营建议】可评估佐餐、会议与家庭饮用场景；不宣传疾病治疗、保健功效，也不使用第三方榜单名次替代真实销量。"
+  },
+  {
+    "id": "seed-memory-rules-v1",
+    "kind": "MEMORY",
+    "fileName": "运营记忆：品牌资料核验约定.md",
+    "keywords": "资料核验,总代理,报价,运营约定",
+    "sourceUrl": "",
+    "content": "初始化运营约定，创建于2026-09-17；不是历史客户对话。\n业务问答先查询手工知识库，再将相关资料交给Kimi组织答案。\n当前总代理需要有地区、有效期和授权链，店铺名称不能作为总代理证明。\n市场价需有SKU、规格、币种、渠道及采集日期；模拟报告不得对外作为真实经营业绩。\n日常记忆是运营记录，不自动升级为已核实品牌事实。"
+  }
+]

@@ -5,6 +5,7 @@ import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { OperatorDashboardLayout } from './layouts/OperatorDashboardLayout'
 import { AiWorkbenchPage } from './pages/AiWorkbenchPage'
+import { KnowledgeManagementPage } from './pages/KnowledgeManagementPage'
 import { CategoryManagementPage } from './pages/CategoryManagementPage'
 import { EnterpriseEmployeesPage } from './pages/EnterpriseEmployeesPage'
 import { EnterpriseOrganizationPage } from './pages/EnterpriseOrganizationPage'
@@ -146,6 +147,7 @@ export default function App() {
               <Route element={<OperatorProfilePage />} path="settings/profile" />
               <Route element={<Navigate replace to="/admin/dashboard" />} path="settings/ai" />
               <Route element={<CategoryManagementPage />} path="settings/categories" />
+              <Route element={<KnowledgeManagementPage />} path="settings/knowledge" />
               <Route
                 element={
                   <OperatorPlaceholderPage

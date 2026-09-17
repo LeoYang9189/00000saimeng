@@ -33,7 +33,7 @@ export function MaterialResultView({ result, onReuse }: { result: MaterialResult
       <button className="shelly-text-button" onClick={() => onReuse(result)} type="button">调整需求</button>
     </div>
     {notes && <p className="shelly-result__notes">补充要求：{notes}</p>}
-    <div className="shelly-result__status" role="status"><span className={result.copy ? 'is-ready' : ''} />{result.message}</div>
+    <div className="shelly-result__status shelly-preserve-text" role="status"><span className={result.status === 'COMPLETED' ? 'is-ready' : ''} />{result.message}</div>
     {result.copy && <section className="shelly-result__copy">
       <div className="shelly-result__section-title"><h4>宣发文案</h4><button className="shelly-text-button" type="button" onClick={() => void copyText(materialCopyText(result))}><CopyOutlined />复制文案</button></div>
       <h3>{result.copy.title}</h3>
@@ -41,7 +41,7 @@ export function MaterialResultView({ result, onReuse }: { result: MaterialResult
       <p className="shelly-preserve-text">{result.copy.body}</p><p>{result.copy.callToAction}</p>
       {result.copy.tags.length > 0 && <p className="shelly-result__tags">{result.copy.tags.map(tag => tag.startsWith('#') ? tag : `#${tag}`).join(' ')}</p>}
     </section>}
-    {result.image.imageUrls.length > 0 && <div className="shelly-result__images">{result.image.imageUrls.map(url => <a key={url} href={url} target="_blank" rel="noreferrer"><img alt={`${product.productName}推广素材`} src={url} /></a>)}</div>}
+    {result.image.imageUrls.length > 0 && <div className="shelly-result__images">{result.image.imageUrls.map(url => <a key={url} href={url} target="_blank" rel="noreferrer"><ProductImage name={`${product.productName}推广素材`} src={url} /><span>打开原图</span></a>)}</div>}
     {!result.copy && <p className="shelly-result__waiting">商品、渠道和风格已整理好。你可以继续调整需求，或下载这份创作说明。</p>}
     <details className="shelly-result__prompt"><summary>查看图片创作指令</summary><p className="shelly-preserve-text">{result.image.request.prompt}</p></details>
     <div className="shelly-result__footer">

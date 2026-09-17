@@ -54,7 +54,7 @@ GET /api/health
 
 当前开发环境使用嵌入式 H2 文件数据库，无需额外启动 MySQL 或 Redis。数据库文件、运行日志、构建产物和本地密钥配置不提交到 Git。
 
-运营工作台固定使用 Kimi K3。通过后端进程环境变量 `MOONSHOT_API_KEY` 注入密钥后重启后端；当前没有自动读取 `.env` 的逻辑。生图适配器等待后续接入 Lovart。详见 [AI 工作台接入说明](./ai-workbench.md)。
+运营工作台固定使用 Kimi K3，生图使用 Lovart OpenAPI。服务端读取 `MOONSHOT_API_KEY`、`LOVART_ACCESS_KEY`、`LOVART_SECRET_KEY`、`LOVART_PROJECT_ID`。可通过环境变量注入，或写入 Git 忽略的 `server/saimeng-admin/application-local.yml` 并以 `--spring.profiles.active=local` 启动。当前没有自动读取 `.env` 的逻辑。详见 [AI 工作台接入说明](./ai-workbench.md)。
 
 ## 4. 当前技术定版
 
