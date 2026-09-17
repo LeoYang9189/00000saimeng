@@ -1,0 +1,54 @@
+# JavaScript dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Java build output
+target/
+*.class
+*.jar
+*.war
+*.hprof
+
+# Local runtime data and logs
+/data/
+/server/data/
+/server/saimeng-admin/data/
+logs/
+*.log
+*.mv.db
+*.trace.db
+*.lock.db
+*.temp.db
+*.sqlite
+*.sqlite3
+/tmp/
+/temp/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+/server/**/application-local.yml
+/server/**/application-local.yaml
+
+# Editor, OS, and agent-local state
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+*.suo
+*.swp
+*.swo
+.agents/
+.codex/
