@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://unpkg.com/common_word_font@latest/alibaba-puhuiti/stylesheetforall.css');
+
+:root {
+  --font-family-zh:
+    "Alibaba PuHuiTi 2.0",
+    "Alibaba PuHuiTi 3.0",
+    "Alibaba PuHuiTi",
+    "阿里巴巴普惠体 2.0",
+    "阿里巴巴普惠体 3.0",
+    "阿里巴巴普惠体",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+  --font-family-intl: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-base: var(--font-family-intl);
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1f1f1f;
+  background: #f5f5f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[lang^='zh'] {
+  --font-family-base: var(--font-family-zh);
+}
+
+html:not([lang^='zh']) {
+  --font-family-base: var(--font-family-intl);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-family-base);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f5f5f5;
+}
+
+ul {
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}

@@ -1,0 +1,29 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "name": "materials",
+      "prompt": "Create exactly ONE isolated premium 3D miniature UI icon for a Chinese import-commerce operations workspace. GENUINELY TRANSPARENT BACKGROUND with alpha, clean cutout, no background color, no checkerboard drawn into pixels. No enclosing circle, tile, badge, pedestal or container. Soft sculpted satin glass and porcelain, refined small-object product rendering, straight edges slightly softened, front three-quarter view, calm neutral studio light, crisp silhouette legible at 48px. Restrained cobalt blue #1f5eff and pale ice blue with a tiny accent; avoid rainbow, cartoon faces, exaggerated gloss, floating particles, letters, numbers or watermarks. Center object, occupy 78% of square canvas, equal transparent margins, no cast shadow outside object. Subject: two slightly overlapping art prints with a cobalt picture/mountain motif and one tiny apricot four-point sparkle, representing product marketing material creation."
+    },
+    {
+      "name": "copy",
+      "prompt": "Create exactly ONE isolated premium 3D miniature UI icon for a Chinese import-commerce operations workspace. GENUINELY TRANSPARENT BACKGROUND with alpha, clean cutout, no background color, no checkerboard drawn into pixels. No enclosing circle, tile, badge, pedestal or container. Soft sculpted satin glass and porcelain, refined small-object product rendering, straight edges slightly softened, front three-quarter view, calm neutral studio light, crisp silhouette legible at 48px. Restrained cobalt blue #1f5eff and pale ice blue with a tiny accent; avoid rainbow, cartoon faces, exaggerated gloss, floating particles, letters, numbers or watermarks. Center object, occupy 78% of square canvas, equal transparent margins, no cast shadow outside object. Subject: a folded white editorial page with three short raised cobalt lines and a small blue fountain pen resting diagonally, representing product copywriting."
+    },
+    {
+      "name": "selection",
+      "prompt": "Create exactly ONE isolated premium 3D miniature UI icon for a Chinese import-commerce operations workspace. GENUINELY TRANSPARENT BACKGROUND with alpha, clean cutout, no background color, no checkerboard drawn into pixels. No enclosing circle, tile, badge, pedestal or container. Soft sculpted satin glass and porcelain, refined small-object product rendering, straight edges slightly softened, front three-quarter view, calm neutral studio light, crisp silhouette legible at 48px. Restrained cobalt blue #1f5eff and pale ice blue with a tiny accent; avoid rainbow, cartoon faces, exaggerated gloss, floating particles, letters, numbers or watermarks. Center object, occupy 78% of square canvas, equal transparent margins, no cast shadow outside object. Subject: a small elegant open shopping bag in icy blue with cobalt handles and a simple pale apricot product box peeking out, representing merchandise selection."
+    },
+    {
+      "name": "analysis",
+      "prompt": "Create exactly ONE isolated premium 3D miniature UI icon for a Chinese import-commerce operations workspace. GENUINELY TRANSPARENT BACKGROUND with alpha, clean cutout, no background color, no checkerboard drawn into pixels. No enclosing circle, tile, badge, pedestal or container. Soft sculpted satin glass and porcelain, refined small-object product rendering, straight edges slightly softened, front three-quarter view, calm neutral studio light, crisp silhouette legible at 48px. Restrained cobalt blue #1f5eff and pale ice blue with a tiny accent; avoid rainbow, cartoon faces, exaggerated gloss, floating particles, letters, numbers or watermarks. Center object, occupy 78% of square canvas, equal transparent margins, no cast shadow outside object. Subject: three satin cobalt and ice-blue vertical columns at different heights, with a thin cobalt rising curve, representing product and business analysis."
+    },
+    {
+      "name": "followup",
+      "prompt": "Create exactly ONE isolated premium 3D miniature UI icon for a Chinese import-commerce operations workspace. GENUINELY TRANSPARENT BACKGROUND with alpha, clean cutout, no background color, no checkerboard drawn into pixels. No enclosing circle, tile, badge, pedestal or container. Soft sculpted satin glass and porcelain, refined small-object product rendering, straight edges slightly softened, front three-quarter view, calm neutral studio light, crisp silhouette legible at 48px. Restrained cobalt blue #1f5eff and pale ice blue with a tiny accent; avoid rainbow, cartoon faces, exaggerated gloss, floating particles, letters, numbers or watermarks. Center object, occupy 78% of square canvas, equal transparent margins, no cast shadow outside object. Subject: two overlapping dimensional chat bubbles, one cobalt blue and one white, with a subtle pale mint check mark, representing customer follow-up."
+    },
+    {
+      "name": "knowledge",
+      "prompt": "Create exactly ONE isolated premium 3D miniature UI icon for a Chinese import-commerce operations workspace. GENUINELY TRANSPARENT BACKGROUND with alpha, clean cutout, no background color, no checkerboard drawn into pixels. No enclosing circle, tile, badge, pedestal or container. Soft sculpted satin glass and porcelain, refined small-object product rendering, straight edges slightly softened, front three-quarter view, calm neutral studio light, crisp silhouette legible at 48px. Restrained cobalt blue #1f5eff and pale ice blue with a tiny accent; avoid rainbow, cartoon faces, exaggerated gloss, floating particles, letters, numbers or watermarks. Center object, occupy 78% of square canvas, equal transparent margins, no cast shadow outside object. Subject: a compact open book with porcelain pages and a cobalt cover, a single blue bookmark, representing business knowledge and answers."
+    }
+  ]
+}

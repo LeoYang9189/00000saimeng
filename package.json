@@ -1,0 +1,30 @@
+{
+  "name": "saimeng-micro-mall",
+  "private": true,
+  "version": "0.1.0",
+  "description": "赛盟微商城前后端一体化工作区",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev -w apps/web-store",
+    "dev:distributor": "npm run dev -w apps/distributor-admin",
+    "dev:operation": "npm run dev -w apps/operation-admin",
+    "build:web": "npm run build -w apps/web-store",
+    "build:distributor": "npm run build -w apps/distributor-admin",
+    "build:operation": "npm run build -w apps/operation-admin",
+    "build:all": "npm run build:web && npm run build:distributor && npm run build:operation"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.3.2",
+    "antd": "^6.6.1",
+    "i18next": "^26.4.0",
+    "react-i18next": "^17.0.12",
+    "react-router-dom": "^7.18.2"
+  }
+}
